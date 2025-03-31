@@ -70,19 +70,13 @@ ridi_login = driver.find_element(By.XPATH, '//*[@id="app"]/main/section/div/butt
 ridi_login.click()
 time.sleep(2)
 
-try:
+if driver.find_element(By.XPATH, '//*[@id="__next"]/div/section/div/div/button[2]'):
     ridi_nvr_login1 = driver.find_element(By.XPATH, '//*[@id="__next"]/div/section/div/div/button[2]')
     ridi_nvr_login1.click()
-except Exception as e:
-    print("login1 element cannot find")
-    driver.quit()
-
-try:
+else:
     ridi_nvr_login2 = driver.find_element(By.XPATH, '//*[@id="__next"]/div/section/div/div[1]/button')
     ridi_nvr_login2.click()
-except Exception as e:
-    print("login2 element cannot find")
-    driver.quit()
+
 
 time.sleep(2)
 
